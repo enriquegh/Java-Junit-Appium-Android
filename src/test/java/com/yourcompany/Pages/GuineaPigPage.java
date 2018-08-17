@@ -34,6 +34,7 @@ public class GuineaPigPage {
         this.commentsTextInput.click();
         this.commentsTextInput.sendKeys(text);
         hideKeyboard();
+        this.driver.navigate().back();
         this.submitButton.click();
     }
 
