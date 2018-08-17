@@ -2,6 +2,7 @@ package com.yourcompany.Tests;
 
 import com.yourcompany.Pages.GuineaPigPage;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.InvalidElementStateException;
 
 import static org.junit.Assert.assertFalse;
@@ -18,8 +19,14 @@ public class FollowLinkTest extends TestBase {
      * @throws InvalidElementStateException
      */
     @Test
-    public void verifyLinkTest() throws InvalidElementStateException {
+    public void verifyLinkTest() throws InvalidElementStateException, InterruptedException {
         GuineaPigPage page = new GuineaPigPage(driver);
+
+        for (int i = 0; i < 25; i++) {
+            driver.findElement(By.id("i_am_a_link"));
+            Thread.sleep(10000);
+
+        }
 
         page.followLink();
 
